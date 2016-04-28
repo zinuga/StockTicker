@@ -23,13 +23,13 @@ Step 5: Make the GetStockPrice a secure call so only allowed clients can call it
 Detailed Java Exercise Steps
 ----------------------------------
 1. Configure your build for your project. 
-...Set up gradle. ./gradlew; ./gradlew init
-...Follow docs to include gRPC dependencies in build.gradle
-...Basic Proto already exists in src/main/proto
-...Run ./gradlew build
-...Run ./gradlew installDist to generate binaries
-...Run server: ./build/install/java/bin/stock-server-start to run server
-...Run client: get stock values for GOOG and TSL
+..1.Set up gradle. ./gradlew; ./gradlew init
+..2.Follow docs to include gRPC dependencies in build.gradle
+..3.Basic Proto already exists in src/main/proto
+..4.Run ./gradlew build
+..5.Run ./gradlew installDist to generate binaries
+..6.Run server: ./build/install/java/bin/stock-server-start to run server
+..7.Run client: get stock values for GOOG and TSL
 
 2. Edit proto to add a method to add stock symbols
 ...Implement on server side to save it.
