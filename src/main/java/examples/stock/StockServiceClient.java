@@ -44,21 +44,6 @@ public class StockServiceClient {
     logger.info("Price is: " + response.getPrice());
   }
 
- /** Set Price of Stock*/
-  public void setPrice(String symbol, String value) {
-    logger.info("Will try to set stock price for " + symbol + " ...");
-    AddSymbolRequest request = AddSymbolRequest.newBuilder().setSymbol(symbol).setValue(Integer.parseInt(value)).build();
-    //request.setSymbol(symbol);	
-    //request.setValue(Integer.parseInt(value));	 	
-    AddSymbolResponse response;
-    try {
-      response = blockingStub.addStockSymbol(request);
-    } catch (StatusRuntimeException e) {
-      logger.log(Level.WARNING, "RPC failed: {0}", e.getStatus());
-      return;
-    }
-    logger.info("Added Stock for " + request.getSymbol());
-  }
 
 
   /**
@@ -77,17 +62,11 @@ public class StockServiceClient {
 		System.out.println("Calling ask price");
 		client.askPrice(symbol);
 	}
-	if (args[0].compareTo("set") == 0){
-		symbol = args[1];
-		value = args[2];
-		System.out.println("Calling set price");
-		client.setPrice(symbol, value); /* Use the arg as the name to greet if provided */
       }
       
-   }
+        }
 	//client.askPrice(symbol);
-      //client.setPrice (symbol, value);
-    } finally {
+    finally {
       client.shutdown();
     }
   }

@@ -16,14 +16,4 @@ public interface StockRequestOrBuilder extends
    */
   com.google.protobuf.ByteString
       getSymbolBytes();
-
-  /**
-   * <code>optional string companyname = 2;</code>
-   */
-  java.lang.String getCompanyname();
-  /**
-   * <code>optional string companyname = 2;</code>
-   */
-  com.google.protobuf.ByteString
-      getCompanynameBytes();
 }

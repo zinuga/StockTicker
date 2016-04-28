@@ -18,16 +18,6 @@ public final class StockProto {
   static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_stock_StockReply_fieldAccessorTable;
-  static com.google.protobuf.Descriptors.Descriptor
-    internal_static_stock_AddSymbolResponse_descriptor;
-  static
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_stock_AddSymbolResponse_fieldAccessorTable;
-  static com.google.protobuf.Descriptors.Descriptor
-    internal_static_stock_AddSymbolRequest_descriptor;
-  static
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_stock_AddSymbolRequest_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -37,16 +27,11 @@ public final class StockProto {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\013stock.proto\022\005stock\"3\n\014StockRequest\022\016\n\006" +
-      "symbol\030\001 \001(\t\022\023\n\013companyname\030\002 \001(\t\"\033\n\nSto" +
-      "ckReply\022\r\n\005price\030\001 \001(\005\"\023\n\021AddSymbolRespo" +
-      "nse\"1\n\020AddSymbolRequest\022\016\n\006symbol\030\001 \001(\t\022" +
-      "\r\n\005value\030\002 \001(\0052\220\001\n\014StockService\022;\n\021GetLa" +
-      "stStockPrice\022\023.stock.StockRequest\032\021.stoc" +
-      "k.StockReply\022C\n\016AddStockSymbol\022\027.stock.A" +
-      "ddSymbolRequest\032\030.stock.AddSymbolRespons" +
-      "eB\036\n\016examples.stockB\nStockProtoP\001b\006proto" +
-      "3"
+      "\n\013stock.proto\022\005stock\"\036\n\014StockRequest\022\016\n\006" +
+      "symbol\030\001 \001(\t\"\033\n\nStockReply\022\r\n\005price\030\001 \001(" +
+      "\0052K\n\014StockService\022;\n\021GetLastStockPrice\022\023" +
+      ".stock.StockRequest\032\021.stock.StockReplyB\036" +
+      "\n\016examples.stockB\nStockProtoP\001b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -65,25 +50,13 @@ public final class StockProto {
     internal_static_stock_StockRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_stock_StockRequest_descriptor,
-        new java.lang.String[] { "Symbol", "Companyname", });
+        new java.lang.String[] { "Symbol", });
     internal_static_stock_StockReply_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_stock_StockReply_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_stock_StockReply_descriptor,
         new java.lang.String[] { "Price", });
-    internal_static_stock_AddSymbolResponse_descriptor =
-      getDescriptor().getMessageTypes().get(2);
-    internal_static_stock_AddSymbolResponse_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-        internal_static_stock_AddSymbolResponse_descriptor,
-        new java.lang.String[] { });
-    internal_static_stock_AddSymbolRequest_descriptor =
-      getDescriptor().getMessageTypes().get(3);
-    internal_static_stock_AddSymbolRequest_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-        internal_static_stock_AddSymbolRequest_descriptor,
-        new java.lang.String[] { "Symbol", "Value", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -30,15 +30,6 @@ public class StockServiceGrpc {
               "stock.StockService", "GetLastStockPrice"),
           io.grpc.protobuf.ProtoUtils.marshaller(examples.stock.StockRequest.getDefaultInstance()),
           io.grpc.protobuf.ProtoUtils.marshaller(examples.stock.StockReply.getDefaultInstance()));
-  @io.grpc.ExperimentalApi
-  public static final io.grpc.MethodDescriptor<examples.stock.AddSymbolRequest,
-      examples.stock.AddSymbolResponse> METHOD_ADD_STOCK_SYMBOL =
-      io.grpc.MethodDescriptor.create(
-          io.grpc.MethodDescriptor.MethodType.UNARY,
-          generateFullMethodName(
-              "stock.StockService", "AddStockSymbol"),
-          io.grpc.protobuf.ProtoUtils.marshaller(examples.stock.AddSymbolRequest.getDefaultInstance()),
-          io.grpc.protobuf.ProtoUtils.marshaller(examples.stock.AddSymbolResponse.getDefaultInstance()));
 
   public static StockServiceStub newStub(io.grpc.Channel channel) {
     return new StockServiceStub(channel);
@@ -58,25 +49,17 @@ public class StockServiceGrpc {
 
     public void getLastStockPrice(examples.stock.StockRequest request,
         io.grpc.stub.StreamObserver<examples.stock.StockReply> responseObserver);
-
-    public void addStockSymbol(examples.stock.AddSymbolRequest request,
-        io.grpc.stub.StreamObserver<examples.stock.AddSymbolResponse> responseObserver);
   }
 
   public static interface StockServiceBlockingClient {
 
     public examples.stock.StockReply getLastStockPrice(examples.stock.StockRequest request);
-
-    public examples.stock.AddSymbolResponse addStockSymbol(examples.stock.AddSymbolRequest request);
   }
 
   public static interface StockServiceFutureClient {
 
     public com.google.common.util.concurrent.ListenableFuture<examples.stock.StockReply> getLastStockPrice(
         examples.stock.StockRequest request);
-
-    public com.google.common.util.concurrent.ListenableFuture<examples.stock.AddSymbolResponse> addStockSymbol(
-        examples.stock.AddSymbolRequest request);
   }
 
   public static class StockServiceStub extends io.grpc.stub.AbstractStub<StockServiceStub>
@@ -102,13 +85,6 @@ public class StockServiceGrpc {
       asyncUnaryCall(
           getChannel().newCall(METHOD_GET_LAST_STOCK_PRICE, getCallOptions()), request, responseObserver);
     }
-
-    @java.lang.Override
-    public void addStockSymbol(examples.stock.AddSymbolRequest request,
-        io.grpc.stub.StreamObserver<examples.stock.AddSymbolResponse> responseObserver) {
-      asyncUnaryCall(
-          getChannel().newCall(METHOD_ADD_STOCK_SYMBOL, getCallOptions()), request, responseObserver);
-    }
   }
 
   public static class StockServiceBlockingStub extends io.grpc.stub.AbstractStub<StockServiceBlockingStub>
@@ -132,12 +108,6 @@ public class StockServiceGrpc {
     public examples.stock.StockReply getLastStockPrice(examples.stock.StockRequest request) {
       return blockingUnaryCall(
           getChannel(), METHOD_GET_LAST_STOCK_PRICE, getCallOptions(), request);
-    }
-
-    @java.lang.Override
-    public examples.stock.AddSymbolResponse addStockSymbol(examples.stock.AddSymbolRequest request) {
-      return blockingUnaryCall(
-          getChannel(), METHOD_ADD_STOCK_SYMBOL, getCallOptions(), request);
     }
   }
 
@@ -164,17 +134,9 @@ public class StockServiceGrpc {
       return futureUnaryCall(
           getChannel().newCall(METHOD_GET_LAST_STOCK_PRICE, getCallOptions()), request);
     }
-
-    @java.lang.Override
-    public com.google.common.util.concurrent.ListenableFuture<examples.stock.AddSymbolResponse> addStockSymbol(
-        examples.stock.AddSymbolRequest request) {
-      return futureUnaryCall(
-          getChannel().newCall(METHOD_ADD_STOCK_SYMBOL, getCallOptions()), request);
-    }
   }
 
   private static final int METHODID_GET_LAST_STOCK_PRICE = 0;
-  private static final int METHODID_ADD_STOCK_SYMBOL = 1;
 
   private static class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -195,10 +157,6 @@ public class StockServiceGrpc {
         case METHODID_GET_LAST_STOCK_PRICE:
           serviceImpl.getLastStockPrice((examples.stock.StockRequest) request,
               (io.grpc.stub.StreamObserver<examples.stock.StockReply>) responseObserver);
-          break;
-        case METHODID_ADD_STOCK_SYMBOL:
-          serviceImpl.addStockSymbol((examples.stock.AddSymbolRequest) request,
-              (io.grpc.stub.StreamObserver<examples.stock.AddSymbolResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -225,13 +183,6 @@ public class StockServiceGrpc {
               examples.stock.StockRequest,
               examples.stock.StockReply>(
                 serviceImpl, METHODID_GET_LAST_STOCK_PRICE)))
-        .addMethod(
-          METHOD_ADD_STOCK_SYMBOL,
-          asyncUnaryCall(
-            new MethodHandlers<
-              examples.stock.AddSymbolRequest,
-              examples.stock.AddSymbolResponse>(
-                serviceImpl, METHODID_ADD_STOCK_SYMBOL)))
         .build();
   }
 }

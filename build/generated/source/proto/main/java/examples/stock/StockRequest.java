@@ -20,7 +20,6 @@ public  final class StockRequest extends
   }
   private StockRequest() {
     symbol_ = "";
-    companyname_ = "";
   }
 
   @java.lang.Override
@@ -51,12 +50,6 @@ public  final class StockRequest extends
             java.lang.String s = input.readStringRequireUtf8();
 
             symbol_ = s;
-            break;
-          }
-          case 18: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            companyname_ = s;
             break;
           }
         }
@@ -117,40 +110,6 @@ public  final class StockRequest extends
     }
   }
 
-  public static final int COMPANYNAME_FIELD_NUMBER = 2;
-  private volatile java.lang.Object companyname_;
-  /**
-   * <code>optional string companyname = 2;</code>
-   */
-  public java.lang.String getCompanyname() {
-    java.lang.Object ref = companyname_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      companyname_ = s;
-      return s;
-    }
-  }
-  /**
-   * <code>optional string companyname = 2;</code>
-   */
-  public com.google.protobuf.ByteString
-      getCompanynameBytes() {
-    java.lang.Object ref = companyname_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      companyname_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
   private byte memoizedIsInitialized = -1;
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -166,9 +125,6 @@ public  final class StockRequest extends
     if (!getSymbolBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessage.writeString(output, 1, symbol_);
     }
-    if (!getCompanynameBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 2, companyname_);
-    }
   }
 
   public int getSerializedSize() {
@@ -178,9 +134,6 @@ public  final class StockRequest extends
     size = 0;
     if (!getSymbolBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(1, symbol_);
-    }
-    if (!getCompanynameBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessage.computeStringSize(2, companyname_);
     }
     memoizedSize = size;
     return size;
@@ -299,8 +252,6 @@ public  final class StockRequest extends
       super.clear();
       symbol_ = "";
 
-      companyname_ = "";
-
       return this;
     }
 
@@ -324,7 +275,6 @@ public  final class StockRequest extends
     public examples.stock.StockRequest buildPartial() {
       examples.stock.StockRequest result = new examples.stock.StockRequest(this);
       result.symbol_ = symbol_;
-      result.companyname_ = companyname_;
       onBuilt();
       return result;
     }
@@ -342,10 +292,6 @@ public  final class StockRequest extends
       if (other == examples.stock.StockRequest.getDefaultInstance()) return this;
       if (!other.getSymbol().isEmpty()) {
         symbol_ = other.symbol_;
-        onChanged();
-      }
-      if (!other.getCompanyname().isEmpty()) {
-        companyname_ = other.companyname_;
         onChanged();
       }
       onChanged();
@@ -439,75 +385,6 @@ public  final class StockRequest extends
   checkByteStringIsUtf8(value);
       
       symbol_ = value;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object companyname_ = "";
-    /**
-     * <code>optional string companyname = 2;</code>
-     */
-    public java.lang.String getCompanyname() {
-      java.lang.Object ref = companyname_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        companyname_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <code>optional string companyname = 2;</code>
-     */
-    public com.google.protobuf.ByteString
-        getCompanynameBytes() {
-      java.lang.Object ref = companyname_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        companyname_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>optional string companyname = 2;</code>
-     */
-    public Builder setCompanyname(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      companyname_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>optional string companyname = 2;</code>
-     */
-    public Builder clearCompanyname() {
-      
-      companyname_ = getDefaultInstance().getCompanyname();
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>optional string companyname = 2;</code>
-     */
-    public Builder setCompanynameBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      companyname_ = value;
       onChanged();
       return this;
     }

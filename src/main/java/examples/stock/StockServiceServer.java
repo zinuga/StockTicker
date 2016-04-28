@@ -144,13 +144,6 @@ private void initializeSimpleMap() throws ParseException, IOException{
       responseObserver.onCompleted();
     }
   
-   //@Override
-   public void addStockSymbol(examples.stock.AddSymbolRequest req ,io.grpc.stub.StreamObserver<AddSymbolResponse> resp){
-      System.out.println("Adding " + req.getSymbol() + "with value " + req.getValue());
-      Integer price = new Integer(req.getValue());
-      stockmap.put(req.getSymbol(),price);
-     //writetoFile(stockmap); 	
-  }
 }
 
 }
