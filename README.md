@@ -1,6 +1,8 @@
-Framework of exercise
-Take a sample Stock Ticker project and do the following exercise in Java. 
+Framework of Stock Price exercise
+-------------------------------
 
+Installation and SetUp
+-------------------------------
 Install gRPC runtime of your language of choice (Java, Go or Python) by studying grpc.io and github.com/grpc/grpc-java
 Set up protoc and protoc plugin of your language and have dev environment set up. Use gradle or maven for Java.
 Understand the Stock Ticker Proto.
@@ -8,6 +10,8 @@ Proto is available at https://github.com/zinuga/StockTicker/blob/master/src/main
 
 
 Stock Ticker App Exercise Steps
+--------------------------------------
+
 The exercise would involve the following steps in one of the three languages. (Java/Go/Python)
 Simple application which has the following services (feel free to add)
 Step 1: Get Stock Price given a Stock Symbol
@@ -17,6 +21,8 @@ Step 4: Add a streaming method to get a stream of all symbols and prices
 Step 5: Make the GetStockPrice a secure call so only allowed clients can call it.
 
 Detailed Java Exercise Steps
+---------------------------------------
+
 Step 1. 
 Configure your build for your project. 
 Set up gradle. ./gradlew; ./gradlew init
