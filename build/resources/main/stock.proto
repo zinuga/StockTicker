@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "examples.stock";
+option java_outer_classname = "StockProto";
+
+package stock;
+
+//message types
+message StockRequest {
+	string symbol = 1;
+	string companyname = 2;
+}
+
+message StockReply {
+	int32 price = 1;
+}
+
+message AddSymbolResponse {
+}
+
+message AddSymbolRequest {
+	string symbol = 1;
+	int32 value = 2;
+}
+
+//server interface
+service StockService {
+	rpc GetLastStockPrice(StockRequest) returns (StockReply);
+	rpc AddStockSymbol (AddSymbolRequest) returns (AddSymbolResponse);
+	//rpc GetPriceStream (StockRequest) returns (stream StockReply)
+}
+
